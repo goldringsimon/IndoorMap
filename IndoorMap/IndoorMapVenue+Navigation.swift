@@ -21,15 +21,24 @@ class IndoorMapGraph: Graph {
         }
         self.vertices = vertices
         
-        self.edgesOutgoing = .init(uniqueKeysWithValues: vertices.map { vertex -> (String, [IndoorMapEdge]) in
+        // For each opening
+        self.edgesOutgoing = .init(uniqueKeysWithValues: vertices.map { currentNode -> (String, [IndoorMapEdge]) in
             
-            let edgesOutgoing = vertices.filter {
-                vertex.opening.id == $0.opening.origin?.id || vertex.opening.id == $0.opening.destination?.id
-            }.map { connectedOpening -> IndoorMapEdge in
-                .init(source: vertex, target: connectedOpening)
-            }
+            // look at all openings that exist
+            let edgesOutgoing = vertices
+                .filter {
+                    // Not interested in the route from this opening to itself
+                    guard $0 != currentNode else { return false }
+                    
+                    // Filter for openings that are connected to this one, by both touching the same unit
+                    // TODO: Do we need the other two permutations?
+                    return currentNode.opening.origin?.id == $0.opening.origin?.id || currentNode.opening.destination?.id == $0.opening.destination?.id
+                }
+                .map { connectedOpening -> IndoorMapEdge in
+                    IndoorMapEdge(source: currentNode, target: connectedOpening)
+                }
             
-            return (vertex.opening.id, edgesOutgoing)
+            return (currentNode.id, edgesOutgoing)
         })
     }
     
@@ -40,6 +49,10 @@ class IndoorMapGraph: Graph {
 
 struct IndoorMapVertex {
     let opening: IndoorMapOpening
+    
+    var id: String {
+        opening.id
+    }
 }
 
 extension IndoorMapVertex: Hashable {
@@ -64,9 +77,7 @@ struct IndoorMapEdge: WeightedEdge {
 
 extension IndoorMapVenue {
 	func findRoute(from: IndoorMapUnit, to: IndoorMapUnit) -> [CLLocationCoordinate2D] {
-		
-//        return [openings.first, openings.last].compactMap({$0?.coordinate})
-        
+        /*
         let graph = IndoorMapGraph(from: self)
         
         let aStar = AStar(graph: graph, heuristic: { (vertex1, vertex2) -> Double in
@@ -74,9 +85,9 @@ extension IndoorMapVenue {
         })
         
         let path = aStar.path(start: graph.vertices.first!, target: graph.vertices.last!)
-        print(path)
+         */
         
-		 return []
+        return []
 	}
 }
 
