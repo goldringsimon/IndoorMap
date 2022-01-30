@@ -39,6 +39,6 @@ Perhaps we:
 
 I think the missing piece is the path from the entrance opening to the first room-point/from the last room-point to the exit opening. How do we know which triangles / room-points are the right starting and ending nodes? (between steps 1 and 2) Maybe it is as simple as distance to opening.
 
-Perhaps we don't want polygon triangulation at all, but instead just to partition each unit (potentially a convex polygon) into convex polygons? Many rooms are rectilinear - we wouldn't want or need to split those into triangles, as a path of the centre of those triangles would be quite a strange way to traverse those rooms!
+Perhaps we don't want polygon triangulation at all, but instead just to partition each unit (potentially a convave polygon) into convex polygons? Many rooms are rectilinear - we wouldn't want or need to split those into triangles, as a path of the centre of those triangles would be quite a strange way to traverse those rooms!
 Investigated: https://doc.cgal.org/latest/Partition_2/index.html#secpartition_2_monotone
 In that link, the right hand side of of Figure 19.1 seems like what we want.

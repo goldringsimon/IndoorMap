@@ -18,6 +18,8 @@
 		49EC1D46235366FE00C21AFF /* IndoorMapVenue+Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC1D45235366FE00C21AFF /* IndoorMapVenue+Navigation.swift */; };
 		49EC1D48235383A800C21AFF /* CLLocationCoordinate2D+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC1D47235383A800C21AFF /* CLLocationCoordinate2D+Extensions.swift */; };
 		F4DB84BA27A6913B00B656DC /* FindRouteNotes.md in Resources */ = {isa = PBXBuildFile; fileRef = F4DB84B927A6913B00B656DC /* FindRouteNotes.md */; };
+		F4DB84BD27A6C25900B656DC /* HashedHeap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB84BC27A6C25900B656DC /* HashedHeap.swift */; };
+		F4DB84BF27A6C27F00B656DC /* AStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DB84BE27A6C27F00B656DC /* AStar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		49EC1D45235366FE00C21AFF /* IndoorMapVenue+Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IndoorMapVenue+Navigation.swift"; sourceTree = "<group>"; };
 		49EC1D47235383A800C21AFF /* CLLocationCoordinate2D+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Extensions.swift"; sourceTree = "<group>"; };
 		F4DB84B927A6913B00B656DC /* FindRouteNotes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FindRouteNotes.md; sourceTree = "<group>"; };
+		F4DB84BC27A6C25900B656DC /* HashedHeap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashedHeap.swift; sourceTree = "<group>"; };
+		F4DB84BE27A6C27F00B656DC /* AStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,7 @@
 		49EC1D2C235354EC00C21AFF /* IndoorMap */ = {
 			isa = PBXGroup;
 			children = (
+				F4DB84BB27A6C24A00B656DC /* 3rd-party */,
 				49EC1D2D235354EC00C21AFF /* AppDelegate.swift */,
 				49EC1D47235383A800C21AFF /* CLLocationCoordinate2D+Extensions.swift */,
 				49EC1D3F2353669500C21AFF /* IndoorMapVenue.swift */,
@@ -80,6 +85,15 @@
 				F4DB84B927A6913B00B656DC /* FindRouteNotes.md */,
 			);
 			path = IndoorMap;
+			sourceTree = "<group>";
+		};
+		F4DB84BB27A6C24A00B656DC /* 3rd-party */ = {
+			isa = PBXGroup;
+			children = (
+				F4DB84BC27A6C25900B656DC /* HashedHeap.swift */,
+				F4DB84BE27A6C27F00B656DC /* AStar.swift */,
+			);
+			path = "3rd-party";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,6 +174,8 @@
 				49EC1D2E235354EC00C21AFF /* AppDelegate.swift in Sources */,
 				49EC1D402353669500C21AFF /* IndoorMapVenue.swift in Sources */,
 				49EC1D42235366B300C21AFF /* IndoorMapUnit.swift in Sources */,
+				F4DB84BF27A6C27F00B656DC /* AStar.swift in Sources */,
+				F4DB84BD27A6C25900B656DC /* HashedHeap.swift in Sources */,
 				49EC1D46235366FE00C21AFF /* IndoorMapVenue+Navigation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
